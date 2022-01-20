@@ -6,13 +6,11 @@ const getTasks = async () => {
 
         const result = await dynamoDB
             .scan({
-            TableName: "TaskTable",
+                TableName: "TasksTable",
             })
             .promise();
 
         const tasks = result.Items;
-
-        console.log(tasks);
 
         return {
             status: 200,
@@ -22,7 +20,7 @@ const getTasks = async () => {
         };
     } 
     catch (error) {
-        console.log(error);
+        console.log("This is a bug", error);
     }
 };
 

@@ -21,7 +21,7 @@ const addTask = async (event) => {
     }).promise();
 
     return {
-        status: 200,
+        statusCode: 200,
         body: JSON.stringify(newTask),
     }
 }
